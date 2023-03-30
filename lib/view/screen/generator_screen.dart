@@ -40,7 +40,7 @@ class _GeneratorScreenState extends State<GeneratorScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Text(
-              'Insert Data For QR Code',
+              'Insert URL For QR Code',
               style: TextStyle(fontSize: 24),
             ),
             InputSection(
@@ -48,18 +48,22 @@ class _GeneratorScreenState extends State<GeneratorScreen> {
               isEmpty: true,
             ),
             MainButton(
-              onTap: () {
-                log('data: ${textController.text}');
-                Navigator.pushNamed(
-                  context,
-                  'generator result',
-                  arguments: textController.text,
-                );
-              },message: "Generate",
+              message: "Generate",
+              onTap: () => goToResultScreen(context, textController),
             ),
           ],
         ),
       ),
     );
   }
+}
+
+void goToResultScreen(
+    BuildContext context, TextEditingController textController) {
+  log('data: ${textController.text}');
+  Navigator.pushNamed(
+    context,
+    'generator result',
+    arguments: textController.text,
+  );
 }

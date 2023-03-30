@@ -1,7 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:qr_helper/core/color.dart';
 
 class ScannerResultScreen extends StatefulWidget {
   const ScannerResultScreen({Key? key}) : super(key: key);
@@ -16,7 +15,9 @@ class _ScannerResultScreenState extends State<ScannerResultScreen> {
     final arg = ModalRoute.of(context)!.settings.arguments as Barcode;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: mainColor,
         title: const Text('Result'),
+        centerTitle: true,
       ),
       body: Center(
         child: Text(
