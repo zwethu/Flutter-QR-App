@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: appName,
       home: const HomeScreen(),
-      routes: {
+      routes: { 
         'home': (context) => const HomeScreen(),
         'generator': (context) => const GeneratorScreen(),
         'scanner': (context) => const ScannerScreen(),
