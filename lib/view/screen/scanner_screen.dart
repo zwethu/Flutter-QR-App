@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:qr_helper/core/color.dart';
 
 class ScannerScreen extends StatefulWidget {
   const ScannerScreen({Key? key}) : super(key: key);
@@ -33,10 +34,17 @@ class _ScannerScreenState extends State<ScannerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Expanded(
-        child: QRView(
-          key: qrKey,
-          onQRViewCreated: _onQRViewCreated,
+      appBar: AppBar(
+        backgroundColor: mainColor,
+      ),
+      body: Center(
+        child: SizedBox(
+          width: 200,
+          height: 200,
+          child: QRView(
+            key: qrKey,
+            onQRViewCreated: _onQRViewCreated,
+          ),
         ),
       ),
     );

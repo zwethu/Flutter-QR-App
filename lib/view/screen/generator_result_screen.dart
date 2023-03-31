@@ -20,35 +20,38 @@ class _GeneratorResultScreenState extends State<GeneratorResultScreen> {
     final arg = ModalRoute.of(context)!.settings.arguments as String;
     return ChangeNotifierProvider<GeneratorResultController>(
       create: (context) => GeneratorResultController(),
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: mainColor,
-        ),
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(padding3x),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'Result',
-                  style: headerTextStyle,
-                ),
-                QrComponent(
-                  url: arg,
-                ),
-                MainButton(
-                  onTap: () async {
-                    final controller = context.read<GeneratorResultController>();
-                    controller.captureAndSaveQr();
-                  },
-                  message: "Save",
-                ),
-              ],
+      builder: (context, child) {
+        return Scaffold(
+          appBar: AppBar(
+            backgroundColor: mainColor,
+          ),
+          body: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(padding3x),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Result',
+                    style: headerTextStyle,
+                  ),
+                  QrComponent(
+                    url: arg,
+                  ),
+                  MainButton(
+                    onTap: () async {
+                      final controller =
+                          context.read<GeneratorResultController>();
+                      controller.captureAndSaveQr();
+                    },
+                    message: "Save",
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }
