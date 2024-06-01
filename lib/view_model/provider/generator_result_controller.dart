@@ -4,21 +4,21 @@ import 'dart:typed_data';
 import 'package:flutter/cupertino.dart';
 import 'package:gallery_saver/gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:screenshot/screenshot.dart';
+// import 'package:screenshot/screenshot.dart';
 
 class GeneratorResultController extends ChangeNotifier {
-  late Uint8List _imageFile;
-  final ScreenshotController screenshotController = ScreenshotController();
+  // late Uint8List _imageFile;
+  // final ScreenshotController screenshotController = ScreenshotController();
 
   void captureAndSaveQr() async {
-    await screenshotController.capture().then((Uint8List? image) {
-      _imageFile = image!;
-      notifyListeners();
-      log('QR code is successfully captured!!!');
-      saveQrCode(_imageFile);
-    }).catchError((onError) {
-      log('Error on capturing QR: $onError');
-    });
+    // await screenshotController.capture().then((Uint8List? image) {
+    //   _imageFile = image!;
+    //   notifyListeners();
+    //   log('QR code is successfully captured!!!');
+    //   saveQrCode(_imageFile);
+    // }).catchError((onError) {
+    //   log('Error on capturing QR: $onError');
+    // });
   }
 
   Future<void> saveQrCode(Uint8List qrCodeBytes) async {

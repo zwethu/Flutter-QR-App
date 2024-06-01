@@ -20,7 +20,7 @@ class _ScannerScreenState extends State<ScannerScreen> {
     controller?.dispose();
     super.dispose();
   }
-  
+
   @override
   void reassemble() {
     super.reassemble();
@@ -35,6 +35,9 @@ class _ScannerScreenState extends State<ScannerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
         backgroundColor: mainColor,
       ),
       body: Center(
@@ -57,7 +60,9 @@ class _ScannerScreenState extends State<ScannerScreen> {
         result = scanData;
       });
       if (result != null) {
-        Navigator.pushNamed(context, 'scanner result', arguments: result);
+        if (mounted) {
+          Navigator.pushNamed(context, 'scanner result', arguments: result);
+        }
       }
     });
   }

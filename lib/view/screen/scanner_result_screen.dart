@@ -18,9 +18,17 @@ class _ScannerResultScreenState extends State<ScannerResultScreen> {
     final arg = ModalRoute.of(context)!.settings.arguments as Barcode;
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
         automaticallyImplyLeading: false,
         backgroundColor: mainColor,
-        title: const Text('Result'),
+        title: const Text(
+          'Result',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         centerTitle: true,
       ),
       body: Center(

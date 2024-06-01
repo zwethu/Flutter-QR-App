@@ -10,12 +10,17 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: mainColor,
-        title: const Text('QR Helper'),
+        title: const Text(
+          'QR Helper',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         centerTitle: true,
       ),
-      body: Column(
+      body: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
+        children: [
           MenuContainer(
             title: 'Scan QR Code',
             route: 'scanner',

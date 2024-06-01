@@ -31,7 +31,15 @@ class _GeneratorScreenState extends State<GeneratorScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('QR Generator'),
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
+        title: const Text(
+          'QR Generator',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         backgroundColor: mainColor,
       ),
       body: Padding(

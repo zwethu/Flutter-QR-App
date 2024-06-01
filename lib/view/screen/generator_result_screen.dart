@@ -23,6 +23,9 @@ class _GeneratorResultScreenState extends State<GeneratorResultScreen> {
       builder: (context, child) {
         return Scaffold(
           appBar: AppBar(
+            iconTheme: const IconThemeData(
+              color: Colors.white,
+            ),
             backgroundColor: mainColor,
           ),
           body: Center(
